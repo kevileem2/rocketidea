@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::name('news.')->group(function () {
+    Route::get('/news', 'NewsController@getIndex')->name('index');
+    Route::get('/news/new', 'NewsController@getCreate')->name('create');
+    Route::post('/news/save', 'NewsController@postSave')->name('save');
+    Route::get('/news/edit/{news_id}', 'NewsController@getEdit')->name('edit');
+    Route::get('/news/detail/{news_id}', 'NewsController@getDetail')->name('detail');
+    Route::get('/news/delete/{news_id}', 'NewsController@destroy')->name('delete');
 });
+
+
+Route::get('/about', 'AboutController@getIndex')->name('about');
+
+Route::get('/', 'HomeController@getIndex')->name('homePage');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
