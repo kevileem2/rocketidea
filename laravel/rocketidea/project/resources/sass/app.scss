@@ -8,11 +8,13 @@
 // Navigation
 @import 'nav';
 
-// News
-@import 'news';
+// Footer
+@import 'footer';
 
-// Shop
-@import 'shop';
+//Pages
+@import 'pages/news';
+@import 'pages/shop';
+@import 'pages/about';
 
 // Buttons
 @import 'buttons';

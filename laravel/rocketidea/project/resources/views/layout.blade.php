@@ -9,17 +9,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
-<body class="">
+<body style="min-height: 100%;padding-bottom:321px;position:relative;" class="">
 
     @include('partials/header')
 
-    <div id="app" class="container">
+    <div id="app" style="margin-bottom:50px;"class="container">
         <div style="width:100%;">
             @yield('content')
         </div>
     </div>
-</body>
-
     @include('partials/scripts')
-
+    @include('partials/footer')
+</body>
 </html>

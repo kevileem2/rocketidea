@@ -38,6 +38,29 @@ h4 {
   height: 60px;
 }
 
+.grad {
+  background-image: linear-gradient(#54DEFD, #49C6E5);
+}
+
+h4 {
+  color: white;
+}
+
+.hr-white {
+  border: 1px solid white;
+}
+
+.white-text {
+  color: white;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .img-container {
   border-radius: 10px;
   margin-left: 0;
@@ -92,6 +115,35 @@ h4 {
 
 .confirmed-container {
   box-shadow: 0 5px 15px rgba(124, 123, 128, 0.15) !important;
+}
+
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.about-card p {
+  font-size: 1.2em;
+}
+
+.about-card-container {
+  margin-bottom: 14px;
+}
+
+.about-card {
+  background: white;
+  padding-top: 10px;
+  box-shadow: 0 5px 15px rgba(124, 123, 128, 0.15);
 }
 
 .primary-button {

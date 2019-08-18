@@ -1,0 +1,22 @@
+.grad {
+    background-image: linear-gradient($primary, $secondary);
+}
+
+h4 {
+    color:white;
+}
+
+.hr-white {
+    border: 1px  solid white;
+}
+
+.white-text {
+    color:white;
+}
+
+.page-footer { 
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+}

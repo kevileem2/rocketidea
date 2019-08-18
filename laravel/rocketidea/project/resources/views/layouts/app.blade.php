@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Authentication')}}</title>
+    <title>Authentication</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,7 +22,6 @@
 <body>
     <div id="app">
         @include('../partials/header')
-
         <main class="py-4">
             @yield('content')
         </main>
