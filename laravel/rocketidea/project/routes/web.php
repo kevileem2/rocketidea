@@ -22,6 +22,10 @@ Route::name('news.')->group(function () {
     Route::get('/news/delete/{news_id}', 'NewsController@destroy')->name('delete');
 });
 
+Route::name('shop.')->group(function () {
+    Route::get('/shop', 'ShopController@getIndex')->name('index');
+    Route::post('/shop/confirmed', 'ShopController@postPayment')->name('payment');
+});
 
 Route::get('/about', 'AboutController@getIndex')->name('about');
 

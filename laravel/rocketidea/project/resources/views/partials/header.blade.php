@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-1">
-                <a class="logo" href="">
+                <a class="logo" href="{{route('homePage')}}">
                     <img src="{{ asset('images/logo.png') }}" alt="logo">
                 </a>
             </div>
@@ -12,18 +12,16 @@
                     <a class="nav-item nav-link @if(Route::is('news.index')) active @endif" href="{{route('news.index')}}">News</a>
                     <a class="nav-item nav-link">Projects</a>
                     <a class="nav-item nav-link @if(Route::is('about')) active @endif" href="{{route('about')}}">About</a>
-                    <a class="nav-item nav-link">Shop</a>
+                    <a class="nav-item nav-link @if(Route::is('shop.index')) active @endif" href="{{route('shop.index')}}">Shop</a>
                 </div>
             </div>
             <div class="col-4">
                 <div class="row vertical-align justify-content-end">
                     @if(Auth::check())
                         <a class="nav-item nav-link">My Projects</a>
-                        <a href="" class="badge badge-light">
-                        <button type="button" class="btn btn-light">
+                        <button type="button" class="btn primary-button">
                             <span class="badge">You have {{Auth::user()->credits}} RP's</span>
                         </button>
-                        </a>
                         <a class="nav-item nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
-    protected $table = 'shop_items';
+    protected $table = 'shop';
     protected $fillable = [
         'type',
         'total',
-        'cost_in_euro',
+        'real_cost_euro',
     ];
 }
