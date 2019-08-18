@@ -3,47 +3,59 @@
 @section('title', 'News')
 
 @section('content')
-@if(Auth::check() && $currentUser->role == "admin")
-    <a href="{{route('news.create')}}"><button class="btn btn-primary" type="submit">New News</button></a>
-@endif
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <h1>News</h1>
+        </div>
+        <div class="align-self-center">
+            @if(Auth::check() && $currentUser->role == "admin")
+            <a href="{{route('news.create')}}"><button class="btn primary-button" type="submit"><span class="fa fa-plus"></span> News</button></a>
+            @endif
+        </div>
+    </div>
+</div>
 
 @if($news->isEmpty())
-
-<div class="alert alert-info" role="alert">
-    <h4 class="alert-heading">Oh Dear!</h4>
-    <p>Son, nothing to see here! <span class='text-bold'></span>.
-        <span class='text-bold'> No News Here, Come back later </span></p>
-    <hr>
-    <p class="mb-0">Shall we explore some innovative projects?</p>
-    <br>
-    <!--<a href=""><button class="btn btn-success" type="submit">Explore
-            Innovations</button></a>-->
-
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-info col-12" role="alert">
+                <h4 class="alert-heading">No News Here!</h4>
+                <hr>
+                <p>Unfortunatly, we don't have new news for you yet!<br>
+                <span class='text-bold'>Come back later when we added some news for you! </span></p>
+            </div>
+        </div>
+    </div>
 @else
-<div class="row">
-    <div class="col-12 mt-3">
+<div class="container">
+    <div class="row">
         @foreach($news as $new)
-
-        <a href="{{route('news.detail', $new->id)}}">
-            <div class="card">
-                <div class="o-card-horizontal">
-                    <div class="img-square-wrapper">
-                        <img class="" src="{{$new->image_path}}" alt="Card image cap">
+        <a style="width:100%" href="{{route('news.detail', $new->id)}}">
+            <div class="news-container col-12">
+                <div class="row">
+                    <div class="col-2">
+                        <img class="img-container" src="{{$new->image_path}}" alt="News Image">
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-title">{{$new->title}}</h4>
+                    <div class="col-10">
+                        <h4 class="align-self-top" style="display:inline-block;">{{$new->title}}</h4>
+                        @if(strlen($new->description) > 100)
+                            <p>{{substr($new->description, 0, 600)}} ...</p>
+                        @else
+                            <p>{{$new->description}}</p>
+                        @endif
+                        <br>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{$new->created_at}}</small>
+                    <div class="col-12 card-footer">
+                        <small class="text-muted">{{$new->created_at}}</small>
+                    </div>
                 </div>
             </div>
         </a>
-        <br>
         @endforeach
-
         {{$news->links()}}
+        </div>
     </div>
 </div>
 @endif

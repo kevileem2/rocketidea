@@ -1,38 +1,43 @@
 @extends('layout')
 
 
-@section("title",'Project')
+@section("title",$new->title)
 
 @section('content')
-<div class="o-project_title">
-    <div style="width: 80%;">
-        <h1>{{$new->title}}</h1>
-    </div>
-    @if( Auth::check() && $user->role == "admin")
-    <a href="{{route('news.delete', $new->id)}}">
-        <button class="btn btn-danger" type="submit">Delete</button>
-    </a>
-    <a href="{{route('news.edit', $new->id)}}">
-        <button class="btn btn-primary" type="submit">Edit News</button>
-    </a>
-    @endif
-</div>
-<!-- Project Information -->
 <div class="container">
-    <!-- images  -->
-    <div class="">
-        <img class="d-block w-100 slide-image" src="../{{$new->image_path}}" alt="First slide">
-    </div>
-    <!-- images end -->
-    <h2>Description</h2>
-    <hr class="featurette-divider">
-    <div class="row featurette">
-
-        <div class="col-md-12">
-            <p> {!!$new->description!!}</p>
+    <div class="row justify-content-between">
+        <div class="col-9">
+            <h1>{{$new->title}}</h1>
         </div>
-
+        <div class="align-self-center">
+            @if(Auth::check() && $user->role == "admin")
+            <a style="margin-right:10px;"href="{{route('news.delete', $new->id)}}">
+                <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i>  Delete</button>
+            </a>
+            <a href="{{route('news.edit', $new->id)}}">
+                <button class="btn primary-button" type="submit"><i class="far fa-edit"></i>  Edit News</button>
+            </a>
+            @endif
+        </div>
     </div>
 </div>
-<!-- Project Information End -->
+<div class="container">
+        <div class="row">
+                <div class="news-container col-12">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-container" src="../{{$new->image_path}}" alt="News Image">
+                        </div>
+                        <div class="col-8" style="margin-top: 20px;">
+                            <p>{{$new->description}}</p>
+                            <br>
+                        </div>
+                        <div class="col-12 card-footer">
+                            <small class="text-muted">{{$new->created_at}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

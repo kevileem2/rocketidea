@@ -1,0 +1,24 @@
+.img-container {
+    border-radius: 10px;
+    margin-left:0;
+    width: 100%; 
+}
+
+.news-container {
+    margin-bottom: 20px;
+    color: #333;
+    background-color: white;
+    border-radius: 10px;
+    // Animation transition
+    box-shadow: 0 5px 15px rgba(124,123,128,0.15);
+    &:hover{
+        box-shadow: 0 10px 35px rgba(124,123,128,0.35);
+        text-decoration: none !important;
+    }
+}
+
+.publish-date {
+    margin: 10px;
+    background-color: #DDD;
+    width: 100%;
+}
