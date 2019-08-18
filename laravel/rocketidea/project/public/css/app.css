@@ -100,6 +100,13 @@ h4 {
   margin: auto;
 }
 
+.inverse-primary-button {
+  border-color: #00bd9D !important;
+  color: #00bd9D !important;
+  width: 100%;
+  margin: auto;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

@@ -18,10 +18,10 @@
             <div class="col-4">
                 <div class="row vertical-align justify-content-end">
                     @if(Auth::check())
-                        <a class="nav-item nav-link">My Projects</a>
                         <button type="button" class="btn primary-button">
                             <span class="badge">You have {{Auth::user()->credits}} RP's</span>
                         </button>
+                        <a class="nav-item nav-link">My Projects</a>
                         <a class="nav-item nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
