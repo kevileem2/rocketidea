@@ -16,14 +16,13 @@
             <input type="text"
                 class="form-control {{$errors->any() ? $errors->has('news_title') ? 'is-invalid': 'is-valid' : ''}}"
                 id="NewsTitle" placeholder="News Title" value="" name="news_title">
-
             @if ($errors->has('news_title'))
             <div class="invalid-feedback">
-                Please provide a news title.
+                Geef ons een geldige titel.
             </div>
             @else
             <div class="valid-feedback">
-                Amazing!
+                Super!
             </div>
             @endif
         </div>
@@ -31,15 +30,15 @@
 
     <div class="form-group">
         <label for="description">News Description</label>
-        <textarea class="form-control is-invalid" id="textarea_description" rows="6"
+        <textarea class="form-control {{$errors->any() ? $errors->has('news_description') ? 'is-invalid': 'is-valid' : ''}}" id="textarea_description" rows="6"
             name="news_description"> {{old('news_description',$news->description) }}</textarea>
         @if ($errors->has('news_description'))
         <div class="invalid-feedback">
-            Please provide a news description.
+            Geef ons een geldige uitleg.
         </div>
         @else
         <div class="valid-feedback">
-            Amazing!
+            Super!
         </div>
         @endif
     </div>
@@ -47,12 +46,10 @@
     <div class="custom-file">
         <input type="file" id="customFile" name="news_image" value="Upload Image"
             class="form-control {{$errors->any() ? $errors->has('news_image') ? 'is-invalid': 'is-valid' : ''}}">
-
         <br>
         * only file format: png, jpg, jpeg
     </div>
-
-    <button class="btn btn-primary" type="submit">Submit News</button>
+    <button style="margin-top:20px;" class="btn primary-button" type="submit">Voeg nieuw news toe!</button>
 </form>
 
 

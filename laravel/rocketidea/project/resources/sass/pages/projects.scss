@@ -1,0 +1,41 @@
+@import '../variables';
+.bg-error {
+    background-color: $red !important;
+}
+
+.Legendarisch {
+    background-color: #FFD700 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.Episch {
+    background-color: #9400D3 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.Zeldzaam {
+    background-color: #0078D7 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.card {
+    box-shadow: 0 5px 15px rgba(124,123,128,0.15);
+    &:hover{
+        box-shadow: 0 10px 35px rgba(124,123,128,0.35);
+        text-decoration: none !important;
+    }
+}
+
+.img-container-projects {
+    margin: 20px;
+    border-radius: 10px;
+    margin-left:0;
+    height: 100px; 
+}
+
+.progress {
+    margin: 20px 0;
+}

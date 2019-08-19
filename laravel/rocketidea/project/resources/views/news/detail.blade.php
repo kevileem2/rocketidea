@@ -11,11 +11,11 @@
         </div>
         <div class="align-self-center">
             @if(Auth::check() && $user->role == "admin")
-            <a style="margin-right:10px;"href="{{route('news.delete', $new->id)}}">
-                <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i>  Delete</button>
-            </a>
             <a href="{{route('news.edit', $new->id)}}">
                 <button class="btn primary-button" type="submit"><i class="far fa-edit"></i>  Edit News</button>
+            </a>
+            <a style="margin-right:10px;"href="{{route('news.delete', $new->id)}}">
+                <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i>  Delete</button>
             </a>
             @endif
         </div>

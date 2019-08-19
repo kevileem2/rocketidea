@@ -14,4 +14,9 @@ class Categories extends Model
         return $this->belongsTo(Project::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
 }

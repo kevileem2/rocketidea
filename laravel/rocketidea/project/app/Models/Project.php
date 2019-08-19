@@ -10,9 +10,11 @@ class Project extends Model
 
     protected $fillable = [
         'user_id',
+        'category_id',
         'title',
         'description',
         'target_amount',
+        'promotion',
         'start_date',
         'end_date',
     ];

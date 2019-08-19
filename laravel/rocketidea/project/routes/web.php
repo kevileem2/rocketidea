@@ -22,6 +22,28 @@ Route::name('news.')->group(function () {
     Route::get('/news/delete/{news_id}', 'NewsController@destroy')->name('delete');
 });
 
+Route::name('projects.')->group(function () {
+    Route::get('/projects', 'ProjectsController@getIndex')->name('index');
+    Route::get('/myprojects', 'ProjectsController@getMyProjects')->name('myprojects');
+    Route::get('/projects/new', 'ProjectsController@getCreate')->name('create');
+    Route::get('/projects/edit/{projectId}', 'ProjectsController@getEdit')->name('edit');
+    Route::get('/projects/detail/{projectId}', 'ProjectsController@getDetail')->name('detail');
+    Route::post('/projects/save', 'ProjectsController@postSave')->name('save');
+    Route::get('/projects/delete/{projectId}', 'ProjectsController@destroy')->name('delete');
+    Route::get('/promote/projectId={projectId}/promotionId={promotionId}', 'ProjectsController@getPromote')->name('promote');
+});
+
+Route::name('categories.')->group(function () {
+    Route::get('/projects/{category}', 'CategoryController@getIndex')->name('index');
+});
+
+Route::name('donators.')->group(/*['middleware' => ['auth']], */function () {
+    Route::post('/projects/savefund', 'DonatorsController@postDonator')->name('save');
+});
+
+Route::name('comments.')->group(function () {
+    Route::post('/projects/savecomment', 'CommentsController@postComment')->name('save');
+});
 Route::name('shop.')->group(function () {
     Route::get('/shop', 'ShopController@getIndex')->name('index');
     Route::post('/shop/confirmed', 'ShopController@postPayment')->name('payment');

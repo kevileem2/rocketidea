@@ -10,7 +10,7 @@
                 <div class="row vertical-align ">
                     <a class="nav-item nav-link @if(Route::is('/')) active @endif" href="{{route('homePage')}}">Home</a>
                     <a class="nav-item nav-link @if(Route::is('news.index')) active @endif" href="{{route('news.index')}}">News</a>
-                    <a class="nav-item nav-link">Projects</a>
+                    <a class="nav-item nav-link @if(Route::is('projects.index')) active @endif" href="{{route('projects.index')}}">Projects</a>
                     <a class="nav-item nav-link @if(Route::is('about')) active @endif" href="{{route('about')}}">About</a>
                     <a class="nav-item nav-link @if(Route::is('shop.index')) active @endif" href="{{route('shop.index')}}">Shop</a>
                 </div>
@@ -21,7 +21,7 @@
                         <button type="button" class="btn primary-button">
                             <span class="badge">You have {{Auth::user()->credits}} RP's</span>
                         </button>
-                        <a class="nav-item nav-link">My Projects</a>
+                        <a class="nav-item nav-link @if(Route::is('projects.myprojects')) active @endif" href="{{route('projects.myprojects')}}">My Projects</a>
                         <a class="nav-item nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">

@@ -3,20 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Project_Image;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    }
-
     public function getIndex(){
-        return view('homePage');
+        $projects = Project::where('promotion', '!=', 0)->get();
+        $images = Project_Image::all();
+        return view('homePage')->with(compact('projects', 'images'));
     }
 
     /**

@@ -21,10 +21,10 @@
     <div class="container">
         <div class="row">
             <div class="alert alert-info col-12" role="alert">
-                <h4 class="alert-heading">No News Here!</h4>
+                <h4 class="alert-heading">Geen nieuws hier!</h4>
                 <hr>
-                <p>Unfortunatly, we don't have new news for you yet!<br>
-                <span class='text-bold'>Come back later when we added some news for you! </span></p>
+                <p>Spijtig genoeg hebben we nog geen nieuws voor u!<br>
+                <span class='text-bold'>Kom later nog eens terug als we nieuws hebben voor jou! </span></p>
             </div>
         </div>
     </div>
