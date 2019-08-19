@@ -51,3 +51,20 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
 8. Your php.ini file extensions:
+```ini
+memory_limit = 8G
+post_max_size = 6G
+;extension_dir = "./"
+; On windows:
+extension_dir = "ext"
+upload_max_filesize = 4G
+extension=curl
+extension=fileinfo
+extension=gd2
+extension=mbstring
+extension=mysqli
+extension=openssl
+extension=pdo_mysql
+extension=pdo_sqlite
+extension=sockets
+extension=xmlrpc
