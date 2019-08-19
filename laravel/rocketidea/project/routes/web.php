@@ -37,7 +37,7 @@ Route::name('categories.')->group(function () {
     Route::get('/projects/{category}', 'CategoryController@getIndex')->name('index');
 });
 
-Route::name('donators.')->group(/*['middleware' => ['auth']], */function () {
+Route::name('donators.')->group(function () {
     Route::post('/projects/savefund', 'DonatorsController@postDonator')->name('save');
 });
 

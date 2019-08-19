@@ -113,7 +113,7 @@ class ProjectsController extends Controller
         $funded_perc = 0;
         $not_funded_perc = 0;
         foreach($donators as $donator){
-            if($donator->project_id === $project_id){
+            if($donator->project_id == $project_id){
                 foreach($pledges as $pledge){
                     if($donator->pledge_id == $pledge->id){
                         $funded_amount += $pledge->price;
